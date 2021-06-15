@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Новостной блок</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Заголовок</th>
+      <th>Содержание</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @posts.each do |post| %>
+      <tr>
+        <td><%= post.title %></td>
+        <td><%= post.body %></td>
+        <td><%= link_to 'Показать', post %></td>
+        <td><%= link_to 'Редактировать', edit_post_path(post) %></td>
+        <td><%= link_to 'Удалить', post, method: :delete, data: { confirm: 'Вы уверены, что хотите удалить этот пост?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'Новый пост', new_post_path %>
