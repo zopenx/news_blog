@@ -29,7 +29,11 @@
       <%= f.label :Текущий_пароль %> <i>(введите текущий пароль для подтверждения изменений)</i><br />
       <%= f.password_field :current_password, autocomplete: "off", class: "form-control" %>
     </div>
-    <br></<br>     
+
+    <br></br>
+    <%= f.collection_select :send_types_id, SendType.all, :id, :info, class: "form-control"%>
+    
+    <br></<br>
     <%= f.submit "Применить", class: "btn btn-primary btn-lg" %>
   <% end %>
 

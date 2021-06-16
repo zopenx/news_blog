@@ -20,8 +20,10 @@ ActiveRecord::Schema.define(version: 2021_06_16_112617) do
     t.datetime "remember_created_at"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "send_types_id", default: 2
     t.index ["email"], name: "index_admins_on_email", unique: true
     t.index ["reset_password_token"], name: "index_admins_on_reset_password_token", unique: true
+    t.index ["send_types_id"], name: "index_admins_on_send_types_id"
   end
 
   create_table "ckeditor_assets", force: :cascade do |t|
@@ -47,4 +49,5 @@ ActiveRecord::Schema.define(version: 2021_06_16_112617) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  add_foreign_key "admins", "send_types", column: "send_types_id"
 end
