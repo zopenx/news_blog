@@ -16,12 +16,15 @@
     <%= form.text_field :title %>
   </div>
 
-  <div class="field">
+  <div class="text-center">
     <%= form.label :Содержание %>
     <%= form.text_field :body %>
+    <%= raw(post.body).truncate(358) %>
   </div>
 
+  <h1></h1>
   <div class="actions">
+
     <%= form.submit "Применить"%>
   </div>
 <% end %>

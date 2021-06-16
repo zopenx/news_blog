@@ -1,0 +1,42 @@
+<div class="col-sm-offset-4 col-sm-4 col-xs-12">
+  <h2 class="text-center">Редактирование аккаунта </h2>
+
+  <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put, class: "form" }) do |f| %>
+    <%= devise_error_messages! %>
+
+    <div class="form-group">
+      <%= f.label :email %><br />
+      <%= f.email_field :email, autofocus: true, class: "form-control" %>
+    </div>
+
+    <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+      <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
+    <% end %>
+
+    <br></<br>
+    <div class="form-group">
+      <%= f.label :Пароль %> <i>(оставьте пустым, если вы не хотите его менять)</i><br />
+      <%= f.password_field :password, autocomplete: "off", class: "form-control" %>
+    </div>
+
+    <br></<br>
+    <div class="form-group">
+      <%= f.label :Подтверждение_пароля%> <br />
+      <%= f.password_field :password_confirmation, autocomplete: "off", class: "form-control" %>
+    </div>
+    <br></<br>
+    <div class="form-group">
+      <%= f.label :Текущий_пароль %> <i>(введите текущий пароль для подтверждения изменений)</i><br />
+      <%= f.password_field :current_password, autocomplete: "off", class: "form-control" %>
+    </div>
+    <br></<br>     
+    <%= f.submit "Применить", class: "btn btn-primary btn-lg" %>
+  <% end %>
+
+  <h3 class="text-center">Удаление_аккаунта</h3>
+
+  <p>Не нравится аккаунт? <%= button_to "Удалить аккаунт", registration_path(resource_name), data: { confirm: "Вы уверены что хотите удалить аккаунт?" }, method: :delete, class: "btn btn-danger btn-lg" %></p>
+
+  <%= link_to "Назад", :back, class: "btn btn-primary btn-lg" %>
+
+</div>
