@@ -34,9 +34,42 @@ Rails.application.configure do
   config.active_storage.service = :local
 
   # Don't care if the mailer can't send.
-  config.action_mailer.raise_delivery_errors = false
+  config.action_mailer.raise_delivery_errors = true
 
   config.action_mailer.perform_caching = false
+
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+     address:              'smtp.mail.ru',
+     port:                 465,
+     domain:               'mail.ru',
+     user_name:            'ruby_test_account@mail.ru',
+     password:             'qazwsxrfv1',
+     authentication:       'login',
+     tls: true,
+     enable_starttls_auto: true
+     #ruby_test_account
+     #qazwsxrfv1
+  # gmail work
+   # address:              'smtp.gmail.com',
+   # port:                 587,
+   # domain:               'example.com',
+   # user_name:            'xxx@gmail.com',
+   # password:             'xxx',
+   # authentication:       'plain',
+   # enable_starttls_auto: true
+  }
+  # config.action_mailer.delivery_method = :sendmail
+  # # Defaults to:
+  # # config.action_mailer.sendmail_settings = {
+  # #   location: '/usr/sbin/sendmail',
+  # #   arguments: '-i -t'
+  # # }
+  # config.action_mailer.perform_deliveries = true
+  # config.action_mailer.raise_delivery_errors = true
+  # config.action_mailer.default_options = {from: 'hello@mydomain.com'}
+  # config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
+
 
   # Print deprecation notices to the Rails logger.
   config.active_support.deprecation = :log

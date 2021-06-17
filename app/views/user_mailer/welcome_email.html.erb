@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <h1>Добро пожаловать на <%= @url %>, <%= @admin.email %></h1>
+    <p>
+      Вы успешно прошли регистрацию на <%= @url %>,
+      ваш логин(email): <%= @admin.email %>.<br>
+    </p>
+    <p>
+      Для перехода на сайт, проследуйте по этой ссылке: <%= @url %>.
+    </p>
+    <p>Благодарим за регистрацию у нас и желаем удачного дня!</p>
+  </body>
+</html>

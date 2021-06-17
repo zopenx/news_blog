@@ -60,3 +60,5 @@ gem 'mini_magick'
 gem 'ckeditor'
 gem 'rails-ckeditor'
 gem 'rails-i18n'
+gem 'mail', '~> 2.7'
+gem 'whenever', require: false

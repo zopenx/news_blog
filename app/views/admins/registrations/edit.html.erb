@@ -34,6 +34,7 @@
     <div>
     <%= f.collection_select :send_types_id, SendType.all, :id, :info, :selected=>resource.send_types_id,class: "form-control"%>
     </div>
+    
     <br></<br>
     <%= f.submit "Применить", class: "btn btn-primary btn-lg" %>
   <% end %>
