@@ -1,4 +1,6 @@
 class ApplicationMailer < ActionMailer::Base
-  # default from: 'from@example.com'
+  default from: 'ruby_test_account@mail.ru'
+
   layout 'mailer'
+  
 end

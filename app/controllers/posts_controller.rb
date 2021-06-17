@@ -57,6 +57,7 @@ class PostsController < ApplicationController
     end
   end
 
+
   private
     def try_update_by_edit_count
       @post = Post.find(params[:id])

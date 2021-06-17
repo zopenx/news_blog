@@ -6,7 +6,9 @@
 # Example:
 #
 set :environment, 'development'
+# env :PATH, ENV['PATH']
 env :PATH, ENV['PATH']
+env :GEM_PATH, ENV['GEM_PATH']
 set :path, "/home/oem/news_blog"
 # set :RAILS_ENV, "development"
 # set :environment, ENV['PATH']
@@ -27,6 +29,6 @@ set :output, "log/cron_log.log"
 every 1.minute do
   puts "aa"
   # runner UserMailer.daily_send
-  runner "UserMailer.daily_send"
+  runner "UserMailer.send_for_day", :output => 'log/cron_log.log'   
   puts "bb"
 end
