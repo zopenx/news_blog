@@ -1,7 +1,7 @@
 class PostsController < ApplicationController
   before_action :set_post, only: %i[ show edit update destroy ]
   before_action :authenticate_admin!, except: [:index, :show]
-
+  before_action :try_update_by_edit_count, only: %i[update]
   # GET /posts or /posts.json
   def index
     @posts = Post.all
@@ -58,6 +58,11 @@ class PostsController < ApplicationController
   end
 
   private
+    def try_update_by_edit_count
+      @post = Post.find(params[:id])
+      @post.edit_count = @post.edit_count+1
+    # Something else
+    end
     # Use callbacks to share common setup or constraints between actions.
     def set_post
       @post = Post.find(params[:id])
@@ -65,6 +70,6 @@ class PostsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def post_params
-      params.require(:post).permit(:title, :body)
+      params.require(:post).permit(:title, :body, :edit_count)
     end
 end

@@ -1,0 +1,2 @@
+      invoke  active_record
+      create    db/migrate/20210617052118_add_edit_count_to_post.rb
