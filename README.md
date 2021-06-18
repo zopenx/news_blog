@@ -20,7 +20,15 @@ Things you may want to cover:
 * Services (job queues, cache servers, search engines, etc.)
 
 * Deployment instructions
+* sudo chmod -R 777 news_blog/
+* cd news_blog
+* bundle install
 * rake db:migrate
-* bundle exec rake webpacker:install
+* whenever —update-crontab
+* (whenever -c   удалить задачи из планировщика)
+* sudo chmod -R 777 news_blog/
+* (Какаято проблема с правами у меня была, не производились записи в бд)
+* bin/rails server
+
 
 * ...
