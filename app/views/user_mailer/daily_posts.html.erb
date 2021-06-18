@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+    <h1><%= @admin.email %>, Вас приветствует <%= @url %>.</h1>
+    <h2>За <%=@days_count%> вышли следующие посты:</h2>
+    <body>
+      <% @posts.each do |post| %>
+          <%= link_to post.title, post %><br></br>
+      <% end %>
+    </body>
+</html>

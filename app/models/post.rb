@@ -6,4 +6,5 @@ class Post < ApplicationRecord
   validates_numericality_of :edit_count, :less_than =>6, :message=>"Достигнуто максимальное число изменений поста равное 5"
   # validates :title, presence: true
   # validates :body, presence: true, length: { minimum: 10 }
+  
 end

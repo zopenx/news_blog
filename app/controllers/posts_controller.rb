@@ -11,6 +11,17 @@ class PostsController < ApplicationController
   def show
   end
 
+  def self.new_post_by_day
+    # @posts = Post.where("created_at >?", Time.zone.parse("2021-06-17 09:00am"))# Date.today)
+    @posts = Post.where("created_at >?", DateTime.now.ago(1.day)).all
+    #1.day.ago.to_date).all
+  end
+
+  def self.new_post_by_week
+    # @posts = Post.where("created_at >?", Time.zone.parse("2021-06-17 09:00am"))# Date.today)
+    @posts = Post.where("created_at >?", DateTime.now.ago(1.week)).all
+    #1.day.ago.to_date).all
+  end
   # GET /posts/new
   def new
     @post = Post.new
