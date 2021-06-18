@@ -5,7 +5,7 @@ class UserMailer < ApplicationMailer
   def welcome_email
     @admin = params[:admin]
     @url  = 'http://localhost:3000/'
-    mail(to: @admin.email, subject: 'Welcome to My Awesome Site')
+    mail(to: @admin.email, subject: 'Добро пожаловать на http://localhost:3000/')
   end
 
   def daily_posts
