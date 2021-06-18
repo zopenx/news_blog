@@ -19,7 +19,7 @@ class UserMailer < ApplicationMailer
   end
 
   def self.send_for_day
-    Admin.all.each do |adm|
+    ApplicationController.admis_by_day.each do |adm|
       @admin = adm
       @posts = PostsController.new_post_by_day
       @days_count = "последний день"
@@ -29,7 +29,7 @@ class UserMailer < ApplicationMailer
   end
 
   def self.send_for_week
-    Admin.all.each do |adm|
+    ApplicationController.admis_by_week.each do |adm|
       @admin = adm
       @posts = PostsController.new_post_by_week
       @days_count = "последнюю неделю"
