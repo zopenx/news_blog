@@ -10,21 +10,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_06_17_052159) do
+ActiveRecord::Schema.define(version: 2021_06_21_101948) do
 
-  create_table "admins", force: :cascade do |t|
-    t.string "email", default: "", null: false
-    t.string "encrypted_password", default: "", null: false
-    t.string "reset_password_token"
-    t.datetime "reset_password_sent_at"
-    t.datetime "remember_created_at"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.integer "send_types_id", default: 2
-    t.index ["email"], name: "index_admins_on_email", unique: true
-    t.index ["reset_password_token"], name: "index_admins_on_reset_password_token", unique: true
-    t.index ["send_types_id"], name: "index_admins_on_send_types_id"
-  end
+# Could not dump table "admins" because of following StandardError
+#   Unknown type 'bool' for column 'amin_role'
 
   create_table "ckeditor_assets", force: :cascade do |t|
     t.string "data_file_name", null: false

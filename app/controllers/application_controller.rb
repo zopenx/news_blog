@@ -3,9 +3,13 @@ class ApplicationController < ActionController::Base
 
    before_action :configure_permitted_parameters, if: :devise_controller?
    after_action :try_mails_sent, only: %i[create]
+   # after_action do , on: [ :create]
+   #   @admin = Admin.last
+   #   UserMailer.with(admin: @admin).welcome_email.deliver_later
+   # end
   protected
   def configure_permitted_parameters
-    added_attrs = [:email, :password, :password_confirmation, :remember_me, :send_types_id]
+    added_attrs = [:email, :password, :password_confirmation, :remember_me, :amin_role, :send_types_id]
     devise_parameter_sanitizer.permit :sign_up, keys: added_attrs
     devise_parameter_sanitizer.permit :account_update, keys: added_attrs
   end
@@ -20,6 +24,7 @@ class ApplicationController < ActionController::Base
 
   private
   def try_mails_sent
+    @admin = Admin.last
     UserMailer.with(admin: @admin).welcome_email.deliver_later
   end
 end

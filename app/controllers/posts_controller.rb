@@ -2,6 +2,8 @@ class PostsController < ApplicationController
   before_action :set_post, only: %i[ show edit update destroy ]
   before_action :authenticate_admin!, except: [:index, :show]
   before_action :try_update_by_edit_count, only: %i[update]
+
+
   # GET /posts or /posts.json
   def index
     @posts = Post.all

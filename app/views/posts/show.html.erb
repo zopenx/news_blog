@@ -10,5 +10,7 @@
   <%= @post.body %>
 </p>
 
+<% if admin_signed_in? && current_admin.amin_role? %>
 <%= link_to 'Редактировать', edit_post_path(@post) %> |
+<%end%>
 <%= link_to 'Назад', posts_path %>

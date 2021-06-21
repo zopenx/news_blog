@@ -43,8 +43,8 @@ Rails.application.configure do
      address:              'smtp.mail.ru',
      port:                 465,
      domain:               'mail.ru',
-     user_name:            'ruby_test_account@mail.ru',
-     password:             'qazwsxrfv1',
+     user_name:            'ruby_test_account2@mail.ru',
+     password:             'qazwsxrfv123',
      authentication:       'login',
      tls: true,
      enable_starttls_auto: true
