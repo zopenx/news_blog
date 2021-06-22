@@ -1,0 +1,17 @@
+nav.navbar.navbar-default
+  .container-fluid
+    #navbar-collapse.collapse.navbar-collapse
+      ul.nav.navbar-nav.navbar-right
+        li
+          = link_to 'На главную страницу', root_path
+        - if admin_signed_in?
+          - if admin_signed_in? && current_admin.amin_role?
+            li
+              = link_to 'Новый блог', new_post_path
+          li
+            = link_to 'Учетная запись', edit_admin_registration_path
+          li
+            = link_to 'Выйти', destroy_admin_session_path, :method => :delete
+        - else
+          li
+            = link_to 'Войти', new_admin_session_path

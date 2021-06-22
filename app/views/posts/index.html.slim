@@ -1,0 +1,30 @@
+p#notice
+  = notice
+h1
+  | Новостной блог
+table
+  thead
+    tr
+      th
+        | Заголовок
+      th
+        | Содержание
+      th[colspan="3"]
+  tbody
+    - @posts.each do |post|
+      tr
+        td
+          = post.title
+        td
+          = post.body
+        - if admin_signed_in?
+          td
+            = link_to 'Показать', post
+          - if current_admin.amin_role?
+            td
+              = link_to 'Редактировать', edit_post_path(post)
+            td
+              = link_to 'Удалить', post, method: :delete, data: { confirm: 'Вы уверены, что хотите удалить этот пост?' }
+br
+- if admin_signed_in? && current_admin.amin_role?
+  = link_to 'Новый пост', new_post_path

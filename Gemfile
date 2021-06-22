@@ -62,3 +62,9 @@ gem 'rails-ckeditor'
 gem 'rails-i18n'
 gem 'mail', '~> 2.7'
 gem 'whenever', require: false
+# gem 'bootstrap', '~> 4.0.0.alpha4'
+# source 'https://rails-assets.org' do
+#   gem 'rails-assets-tether', '>=1.1.0'
+# end
+gem 'bootstrap-sass'
+gem 'html2slim'

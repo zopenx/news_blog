@@ -1,0 +1,20 @@
+= form_with(model: post) do |form|
+  - if post.errors.any?
+    #error_explanation
+      h2
+        | Пост не может быть сохранен. Ошибок : 
+        = pluralize(post.errors.count, "")
+      ul
+        - post.errors.each do |error|
+          li
+            = error.message
+  .field
+    = form.label :Заголовок
+    = form.text_field :title
+  .text-center
+    = form.label :Содержание
+    = form.text_field :body
+    = raw(post.body).truncate(358)
+  h1
+  .actions
+    = form.submit "Применить"

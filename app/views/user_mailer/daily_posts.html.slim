@@ -1,0 +1,17 @@
+doctype html
+html
+  head
+    meta[content="text/html; charset=UTF-8" http-equiv="Content-Type"]
+  h1
+    = @admin.email
+    | , Вас приветствует 
+    = @url
+    | .
+  h2
+    | За 
+    =@days_count
+    |  вышли следующие посты:
+  body
+    - @posts.each do |post|
+      = link_to post.title, post
+      br
