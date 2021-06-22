@@ -43,7 +43,7 @@ Rails.application.configure do
      address:              'smtp.mail.ru',
      port:                 465,
      domain:               'mail.ru',
-     user_name:            'ruby_test_account2@mail.ru',
+     user_name:            'ruby_test_account_3@mail.ru',
      password:             'qazwsxrfv123',
      authentication:       'login',
      tls: true,
@@ -106,5 +106,5 @@ Rails.application.configure do
 
   # Uncomment if you wish to allow Action Cable access from any origin.
   # config.action_cable.disable_request_forgery_protection = true
-  config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
+  # config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
 end

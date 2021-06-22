@@ -1,6 +1,6 @@
 class UserMailer < ApplicationMailer
 
-  default from: 'ruby_test_account2@mail.ru'
+  default from: 'ruby_test_account_3@mail.ru'
 
   def welcome_email
     @admin = params[:admin]
